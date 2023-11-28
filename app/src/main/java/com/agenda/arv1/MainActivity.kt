@@ -3,9 +3,9 @@ package com.example.arv1
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.agenda.arv1.BitmapHelper
 import com.agenda.arv1.MarkerInfoAdapter
-import com.agenda.arv1.PontoRecordacao
+import com.agenda.arv1.config.BitmapHelper
+import com.agenda.arv1.model.PontoRecordacao
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     var rioBV = LatLng(-5.119807554904492, -39.73120742055659)
     var autoVip = LatLng(-7.0209901,-37.2717041)
     private val pontosRecordacao = arrayListOf(
-        PontoRecordacao(1, "BV", "BOA VIAGEM - CE adsssssssssssssssssssssssssssssssssss", boaViagem),
-        PontoRecordacao(2, "Forum", "BOA VIAGEM - CE asddddddddddddddddddddddddddddddddddd", rioBV),
+        PontoRecordacao(1, "BV", "BOA VIAGEM - CE", boaViagem),
+        PontoRecordacao(2, "Forum", "BOA VIAGEM - CE", rioBV),
         PontoRecordacao(3, "AutoVIP", "PARAIBA - CE", autoVip)
     )
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +56,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 .title(memoria.nome)
                 .snippet(memoria.descricao)
                 .position(memoria.latLng)
-                .icon(BitmapHelper.vectorToBitmap(
+                .icon(
+                    BitmapHelper.vectorToBitmap(
                     this, R.drawable.baseline_local_cafe_24,
                     ContextCompat.getColor(this, androidx.appcompat.R.color.primary_material_dark)))
         )

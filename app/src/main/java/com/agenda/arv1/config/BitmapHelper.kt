@@ -1,4 +1,4 @@
-package com.agenda.arv1
+package com.agenda.arv1.config
 
 import android.content.Context
 import android.graphics.Bitmap

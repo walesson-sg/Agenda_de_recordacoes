@@ -1,4 +1,4 @@
-package com.agenda.arv1
+package com.agenda.arv1.model
 
 import com.google.android.gms.maps.model.LatLng
 
