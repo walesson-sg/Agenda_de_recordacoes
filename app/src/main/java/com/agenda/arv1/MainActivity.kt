@@ -1,6 +1,6 @@
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.arv1.R
+import com.agenda.arv1.R
 
 class MainActivity : AppCompatActivity() {
 
