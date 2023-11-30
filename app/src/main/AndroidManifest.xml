@@ -30,6 +30,7 @@
             android:name="com.agenda.arv1.controller.HomeActivity"
             android:exported="true">
 
+
         </activity>
         <activity
             android:name="com.agenda.arv1.controller.RegisterActivity"

@@ -28,10 +28,9 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_maps)
 
-        val mapFragment =
-            supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
         mapFragment.getMapAsync { googleMap ->
             googleMap.setInfoWindowAdapter(MarkerInfoAdapter(this))
             onMapReady(googleMap)
