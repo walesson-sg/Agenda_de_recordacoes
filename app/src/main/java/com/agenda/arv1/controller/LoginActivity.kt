@@ -11,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.agenda.arv1.AgendaApplication
 import com.agenda.arv1.R
+import com.agenda.arv1.data.MemoriasViewModel
 import com.agenda.arv1.data.UserViewModel
+import com.google.android.gms.maps.model.LatLng
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -20,6 +22,12 @@ class LoginActivity : AppCompatActivity() {
     private val userViewModel: UserViewModel by viewModels {
         UserViewModel.AuthViewModelFactory(
             (this.application as AgendaApplication).userRepository
+        )
+    }
+
+    private val memoriasViewModel: MemoriasViewModel by viewModels {
+        MemoriasViewModel.MemoriasViewModelFactory(
+            (this.application as AgendaApplication).memoriasRepository
         )
     }
 
@@ -44,10 +52,10 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        if (userViewModel.isLogged()) {
-//            val intent = Intent(this, HomeActivity::class.java)
-//            startActivity(intent)
-//        }
+        if (userViewModel.isLogged()) {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun onLogin(username: String, password: String) {

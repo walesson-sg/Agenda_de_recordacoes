@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ARv1</string>
     <string name="google_map_api_key">AIzaSyDChBjvAWWmWqegSz6ws4DZLpPbcokn_EM</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Menu</string>
+    <string name="second_fragment_label">Mapa</string>
+    <string name="next">Mapa</string>
+    <string name="previous">Adicionar</string>
 </resources>

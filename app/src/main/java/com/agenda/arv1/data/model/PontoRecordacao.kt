@@ -3,11 +3,17 @@ package com.agenda.arv1.data.model
 import com.google.android.gms.maps.model.LatLng
 
 class PontoRecordacao constructor(
-    var id : Int? = null,
+    var uid : String? = null,
     var nome : String? = null,
     var descricao : String? = null,
-    var latLng : LatLng
+    var lat : Double? = null,
+    var lng : Double? = null,
 ){
-
-
+    fun toMap() = mutableMapOf(
+        "uid" to uid,
+        "nome" to nome,
+        "descricao" to descricao,
+        "lat" to lat.toString(),
+        "lng" to lng.toString()
+    )
 }
