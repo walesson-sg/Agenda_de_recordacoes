@@ -11,15 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ARv1"
+        android:name=".AgendaApplication"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_map_api_key"/>
+
         <activity
-            android:name=".MainActivity"
+            android:name="com.agenda.arv1.controller.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.agenda.arv1.controller.HomeActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name="com.agenda.arv1.controller.RegisterActivity"
+            android:exported="true">
         </activity>
     </application>
 

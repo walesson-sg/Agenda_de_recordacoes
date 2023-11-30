@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "983966198518",
+    "project_id": "agenda-de-recordacoes",
+    "storage_bucket": "agenda-de-recordacoes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983966198518:android:596e136abb03fa68dfdad7",
+        "android_client_info": {
+          "package_name": "com.agenda.arv1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAAhwF8kH_D3aAHGD9t3RKqXgsil_yhk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
