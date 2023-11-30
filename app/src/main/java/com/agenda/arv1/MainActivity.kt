@@ -1,10 +1,10 @@
 package com.agenda.arv1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.agenda.arv1.util.BitmapHelper
 import com.agenda.arv1.data.model.PontoRecordacao
+import com.agenda.arv1.util.BitmapHelper
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private var mGoogleMap: GoogleMap? = null
-    var boaViagem = LatLng(-5.1260677305366755, -39.7310485609616)
+        var boaViagem = LatLng(-5.1260677305366755, -39.7310485609616)
     var rioBV = LatLng(-5.119807554904492, -39.73120742055659)
     var autoVip = LatLng(-7.0209901,-37.2717041)
     private val pontosRecordacao = arrayListOf(
