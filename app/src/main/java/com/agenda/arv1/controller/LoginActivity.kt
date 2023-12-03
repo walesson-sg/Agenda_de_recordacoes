@@ -53,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if (userViewModel.isLogged()) {
+
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
@@ -63,8 +64,11 @@ class LoginActivity : AppCompatActivity() {
             isLogging = true
             lifecycleScope.launch {
                 try {
+//                    lifecycleScope.launch {
+//                        memoriasViewModel.create("Viagem com a Família", "Viagem de férias com a família", LatLng(-23.563518259448838, -46.63837987507322))
+//                    }
                     userViewModel.login(username, password)
-                    val intent = Intent(applicationContext, HomeActivity::class.java)
+                    val intent = Intent(applicationContext, MenuActivity::class.java)
                     startActivity(intent)
                 } catch (e: Exception) {
                     Toast.makeText(applicationContext, "Credenciais inválidas!", Toast.LENGTH_SHORT).show()
