@@ -29,14 +29,13 @@ class AddRecordacaoActivity : AppCompatActivity() {
         val nome: EditText = findViewById(R.id.textNome)
         val descricao = findViewById<EditText>(R.id.textDescricao)
 
-
-            btnAddMemoria.setOnClickListener {
-                if (latLng != null) {
-                    novaMemoria(nome.text.toString(), descricao.text.toString(), LatLng(latLng.latitude, latLng.longitude))
-                }
-                val intent = Intent(this, SecondFragment::class.java)
-                startActivity(intent)
+        btnAddMemoria.setOnClickListener {
+            if (latLng != null) {
+                novaMemoria(nome.text.toString(), descricao.text.toString(), LatLng(latLng.latitude, latLng.longitude))
             }
+            val intent = Intent(this, SecondFragment::class.java)
+            startActivity(intent)
+        }
     }
 
     fun novaMemoria(nome: String, descricao: String, latLng: LatLng){

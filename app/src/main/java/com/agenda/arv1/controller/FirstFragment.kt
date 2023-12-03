@@ -1,6 +1,8 @@
 package com.agenda.arv1.controller
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -59,10 +61,23 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
-        val adapter = CustomAdapter()
-        adapter.itemTouchedCallback = {
-            // TODO
-        }
+        val adapter = CustomAdapter(
+            itemDeleteCallback = { item ->
+                val dialogAddRecordacao = AlertDialog.Builder(context)
+                dialogAddRecordacao.setTitle("Deletar recordação")
+
+                dialogAddRecordacao.setMessage("Você quer deletar esta recordação?")
+                dialogAddRecordacao.setPositiveButton("Sim", DialogInterface.OnClickListener { ok, which ->
+                    item.uid?.let { uid ->
+                        requireActivity().lifecycleScope.launch {
+                            viewModel.remove(uid)
+                        }
+                    }
+                })
+                dialogAddRecordacao.setNegativeButton("Não", null)
+                dialogAddRecordacao.create().show()
+            }
+        )
 
         binding.memoriaLista.adapter = adapter
         binding.memoriaLista.layoutManager = LinearLayoutManager(activity)

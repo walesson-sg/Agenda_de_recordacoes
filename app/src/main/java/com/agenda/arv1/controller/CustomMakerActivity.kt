@@ -14,7 +14,6 @@ class CustomMakerActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.custom_marker_recordacao)
         val btnMemoria: Button = findViewById(R.id.btnMemorias)
-        val teste = findViewById<TextView>(R.id.textTeste)
 
         lifecycleScope.launch {
             btnMemoria.setOnClickListener{
