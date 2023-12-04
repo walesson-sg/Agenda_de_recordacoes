@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ARv1</string>
-    <string name="google_map_api_key">AIzaSyDChBjvAWWmWqegSz6ws4DZLpPbcokn_EM</string>
+    <string name="google_map_api_key">API_KEY_GOOGLEMAPS</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->

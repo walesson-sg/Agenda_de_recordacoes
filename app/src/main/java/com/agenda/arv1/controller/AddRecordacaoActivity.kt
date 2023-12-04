@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
 import com.agenda.arv1.AgendaApplication
 import com.agenda.arv1.R
@@ -33,8 +34,11 @@ class AddRecordacaoActivity : AppCompatActivity() {
             if (latLng != null) {
                 novaMemoria(nome.text.toString(), descricao.text.toString(), LatLng(latLng.latitude, latLng.longitude))
             }
-            val intent = Intent(this, SecondFragment::class.java)
-            startActivity(intent)
+            lifecycleScope.launch {
+                val intent = Intent(null, SecondFragment::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 
