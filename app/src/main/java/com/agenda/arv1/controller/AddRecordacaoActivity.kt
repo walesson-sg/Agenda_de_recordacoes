@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.agenda.arv1.AgendaApplication
 import com.agenda.arv1.R
 import com.agenda.arv1.data.MemoriasViewModel
@@ -34,11 +35,8 @@ class AddRecordacaoActivity : AppCompatActivity() {
             if (latLng != null) {
                 novaMemoria(nome.text.toString(), descricao.text.toString(), LatLng(latLng.latitude, latLng.longitude))
             }
-            lifecycleScope.launch {
-                val intent = Intent(null, SecondFragment::class.java)
-                startActivity(intent)
-            }
-
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
         }
     }
 

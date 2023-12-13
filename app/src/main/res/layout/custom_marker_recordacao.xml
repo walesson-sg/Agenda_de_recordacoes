@@ -7,19 +7,6 @@
     android:padding="20dp"
     tools:context=".controller.CustomMakerActivity">
 
-    <Button
-        android:id="@+id/btnMemorias"
-        android:layout_width="116dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/azulm"
-        android:text="Memorias"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_description" />
-
     <TextView
         android:id="@+id/txt_tittle"
         android:layout_width="match_parent"

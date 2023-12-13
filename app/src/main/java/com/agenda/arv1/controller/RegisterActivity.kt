@@ -44,12 +44,12 @@ class RegisterActivity : AppCompatActivity() {
             val newPassword = editTextNewPassword.text.toString()
 
             if (newUsername.isEmpty()) {
-                Toast.makeText(this.applicationContext, "E-mail inválido.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "E-mail inválido.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (newPassword.isEmpty()) {
-                Toast.makeText(this.applicationContext, "Senha inválida.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Senha inválida.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -58,8 +58,8 @@ class RegisterActivity : AppCompatActivity() {
                 try {
                     userViewModel.signUp(newUsername, newPassword)
 
-                    Toast.makeText(applicationContext, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(applicationContext, LoginActivity::class.java)
+                    Toast.makeText(this@RegisterActivity, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                     startActivity(intent)
                 } catch (e: FirebaseAuthWeakPasswordException) {
                     toastMessage = "Senha fraca, deve ter no mínimo 6 caracteres."
@@ -73,7 +73,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
                 if (toastMessage.isNotEmpty()) {
-                    Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, toastMessage, Toast.LENGTH_SHORT).show()
                 }
 
                 isRegistering = false
