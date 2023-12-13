@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 try {
                     userViewModel.login(username, password)
-                    val intent = Intent(applicationContext, HomeActivity::class.java)
+                    val intent = Intent(applicationContext, MenuActivity::class.java)
                     startActivity(intent)
                 } catch (e: Exception) {
                     Toast.makeText(applicationContext, "Credenciais inválidas!", Toast.LENGTH_SHORT).show()
