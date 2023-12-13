@@ -1,37 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:orientation="vertical">
+    android:padding="20dp"
+    tools:context=".controller.CustomMakerActivity">
+
+    <Button
+        android:id="@+id/btnMemorias"
+        android:layout_width="116dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/azulm"
+        android:text="Memorias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_description" />
 
     <TextView
         android:id="@+id/txt_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:text="AAAAAAAAAAAAAAAAAA"
-    />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="AAAAAAAAAAAAAAAAAA" />
+
     <TextView
         android:id="@+id/txt_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        tools:text="BBBBBBBBBBBBBBBBBBB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tittle"
+        tools:text="BBBBBBBBBBBBBBBBBBB" />
 
-        />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:text="Memorias"
-        android:background="@android:color/white"
-        />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

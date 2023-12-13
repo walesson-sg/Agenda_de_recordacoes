@@ -1,8 +1,11 @@
 package com.agenda.arv1.util.adapters
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -10,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.agenda.arv1.R
 import com.agenda.arv1.data.model.PontoRecordacao
 
-class CustomAdapter() : ListAdapter<PontoRecordacao, CustomAdapter.ViewHolder>(callback) {
-    var itemTouchedCallback: ((item: PontoRecordacao) -> Unit)? = null
+class CustomAdapter(
+    private var itemDeleteCallback: ((item: PontoRecordacao) -> Unit)? = null,
+    private var itemTouchedCallback: ((item: PontoRecordacao) -> Unit)? = null) : ListAdapter<PontoRecordacao, CustomAdapter.ViewHolder>(callback){
 
     companion object {
         private val callback = object : DiffUtil.ItemCallback<PontoRecordacao>() {
@@ -32,6 +36,7 @@ class CustomAdapter() : ListAdapter<PontoRecordacao, CustomAdapter.ViewHolder>(c
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val titulo = view.findViewById<TextView>(R.id.tituloText)
         val desc = view.findViewById<TextView>(R.id.descText)
+        val btnDelete = view.findViewById<ImageButton>(R.id.btnDelete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -45,13 +50,19 @@ class CustomAdapter() : ListAdapter<PontoRecordacao, CustomAdapter.ViewHolder>(c
         val item = getItem(position)
 
         val context = holder.itemView.context
-
         holder.titulo.text = item.nome
         holder.desc.text = item.descricao
 
         holder.itemView.setOnClickListener {
             itemTouchedCallback?.let { it(item) }
         }
-    }
 
+
+        holder.btnDelete.setOnClickListener {
+            itemDeleteCallback?.let { cb ->
+                cb(item)
+            }
+        }
+
+    }
 }
